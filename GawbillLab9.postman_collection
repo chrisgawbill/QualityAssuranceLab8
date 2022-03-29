@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "https://localhost:44304/api/products",
+			"name": "http://localhost:44304/api/products",
 			"event": [
 				{
 					"listen": "test",
@@ -80,8 +80,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44304/api/products",
-					"protocol": "https",
+					"raw": "http://localhost:44304/api/products",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -95,7 +95,7 @@
 			"response": []
 		},
 		{
-			"name": "https://localhost:44304/api/products/1",
+			"name": "http://localhost:44304/api/products/1",
 			"event": [
 				{
 					"listen": "test",
@@ -147,8 +147,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44304/api/products/1",
-					"protocol": "https",
+					"raw": "http://localhost:44304/api/products/1",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
