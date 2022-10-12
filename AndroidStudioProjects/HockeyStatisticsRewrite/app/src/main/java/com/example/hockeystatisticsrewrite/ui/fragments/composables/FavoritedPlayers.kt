@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
@@ -19,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
@@ -35,16 +37,17 @@ fun FavoritedPlayers(modifier: Modifier = Modifier, favoritePlayers: List<String
             .border(5.dp, Color.Black, RoundedCornerShape(20.dp))
     ) {
         items(favoritePlayers.count()) { index ->
-            favoritePlayers[index].let { team ->
+            favoritePlayers[index].let { player ->
                 Row(modifier = Modifier.fillMaxWidth()) {
                     ConstraintLayout() {
                         val (playerName, deleteIcon) = createRefs()
-                        Text(text = team, modifier = Modifier
+                        ClickableText(text = AnnotatedString(player), modifier = Modifier
                             .width(320.dp)
                             .constrainAs(playerName) {
                                 start.linkTo(parent.start, 15.dp)
-                                top.linkTo(parent.top, 8.dp)
-                            })
+                                top.linkTo(parent.top, 12.dp)
+                            },
+                        onClick = { playerTextOnClick(player, context) })
                         IconButton(onClick = { deleteFavoritePlayerOnClick(context) },
                             modifier = Modifier.constrainAs(deleteIcon) {
                                 start.linkTo(playerName.end)
@@ -66,7 +69,9 @@ fun FavoritedPlayers(modifier: Modifier = Modifier, favoritePlayers: List<String
 fun deleteFavoritePlayerOnClick(context: Context) {
     Toast.makeText(context, "Favorite Player Deleted", Toast.LENGTH_SHORT).show()
 }
-
+fun playerTextOnClick(playerName:String, context: Context){
+    Toast.makeText(context, playerName, Toast.LENGTH_SHORT).show()
+}
 @Preview(showBackground = true)
 @Composable
 fun DefaultFavoritePlayerPreview() {

@@ -28,7 +28,7 @@ fun BottomBar(navHostController: NavHostController) {
                     Icon(imageVector = navItem.icon, contentDescription = navItem.label)
                 },
                 label = {Text(text = navItem.label)},
-                alwaysShowLabel = false
+                alwaysShowLabel = true,
             )
         }
     }
