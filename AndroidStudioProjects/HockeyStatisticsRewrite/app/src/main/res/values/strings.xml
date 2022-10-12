@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">HockeyStatisticsRewrite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="button_standings_text">Standings</string>
+    <string name="button_players_text">Player Leaders</string>
+    <string name="button_draft_text">Draft</string>
+    <string name="button_playoffs_text">Playoffs</string>
+    <string name="main_favorite_default_text">Favorite a Team/Player</string>
+    <string name="favorite_team_search_hint">Enter in a a Team Name</string>
+    <string name="next_button_txt">Next</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
